@@ -1,191 +1,215 @@
-document.addEventListener('DOMContentLoaded', function() {
-
-// SERVICES START 
-
-    const services = [
-        
-        
-        {
-            title: "🔷  SIM INFORMATION ",
-            description: " যেকোনো সিম কার নামে রেজিষ্ট্রেশন করা তার সেই NID এবং সম্পূর্ণ পরিচয় বের করে নিতে পারবেন এই সার্ভিস এর মাধ্যমে। ",
-            prices: [
-                { provider: "GP", price: "140" },
-                { provider: "BL", price: "130" },
-                { provider: "ROBI", price: "170" },
-                { provider: "AIRTEL", price: "170" },
-                { provider: "TALITOLK", price: "270" }
-            ]
-        },
-
-
-        {
-            title: "🔷  LIVE LOCATION ",
-            description: "যেকোনো সিম এর লাইভ লোকেশন বের করতে পারবেন এই সার্ভিস এর মাধ্যমে।  সিম খোলা থাকলে বর্তমান লাইভ লোকেশন পাবেন। সিম বন্ধ থাকলে সেই সিম বন্ধ হওয়ার আগে যেখানে ছিলো সেটার লোকেশন পাবেন।",
-            prices: [
-                { provider: "GP", price: "530" },
-                { provider: "BL", price: "530" },
-                { provider: "ROBI", price: "540" },
-                { provider: "AIRTEL", price: "520" },
-                { provider: "TALITOLK", price: "500" }
-            ]
-        },
-
-
-        {
-            title: "🔷 SIM BLOCK ",
-            description: "যেকারো সিম ডিজাবেল করে দিতে পারবেন এই সার্ভিস এর মাধ্যমে। অর্থাৎ  যে সিম ডিজাবেল করবে সেটা দিয়ে কেউ কল করতে  পারবে না রিসিভও করতে পারবে না। ",
-            prices: [
-                { provider: "GP", price: "180" },
-                { provider: "BL", price: "160" },
-                { provider: "ROBI", price: "170" },
-                { provider: "AIRTEL", price: "170" },
-                { provider: "TALITOLK", price: "200" }
-            ]
-        },
-
-        
-        {
-            title: "🔷 NID TO ALL NUMBER ",
-            description: "এইটার মাধ্যামে আপনি যেকোনো এনআইডি নাম্বার থেকে সেই এনআইডি দিয়ে মোট কয়টা সিম রেজিষ্ট্রেশন করা সেই সকল নাম্বার দেখতে পারবেন। ",
-            prices: [
-                { provider: "ANY NID", price: "650" },
-            ]
-        },
-
-
-        {
-            title: "🔷 ACCOUNT INFORMATION ",
-            description: "এটার মধ্যে আপনি বিকাশ রকেট কার NID দিয়ে ভেরিফাই করা সেই NID এবং সেই লোকের সম্পূর্ণ তথ্য পাবেন। ",
-            prices: [
-                { provider: "BKASH", price: "1900" },
-                { provider: "ROCKET", price: "1700" }
-            ]
-        },
-
-
-        {
-            title: "🔷 NID CARD ",
-            description: "এটার মাধ্যম যে কারো ফরম নাম্বার, NID নাম্বার আথবা ভোটার নাম্বার দিয়ে সেই NID কার্ডটা বের করে নিতে পারবেন। কোন ফেইজ ভেরিফাই করতে হবে না। ",
-            prices: [
-                { provider: "FROM NUMBER", price: "150" },
-                { provider: "NID NUMBER", price: "150" },
-                { provider: "VOTER NUMBER", price: "155" }
-            ]
-        },
-
-
-        {
-            title: "🔷 SIM CALL LIST ",
-            description: " এইটার মাধ্যমে যে কোন নাম্বারের লাস্ট ৩ মাসের কল লিস্ট লোকেশন বাহির করা হয়। অর্থাৎ ৩ মাসে যত নাম্বারে কথা বলছে সে সকল নাম্বার & ঠিকানা এবং ঐ ফোনের IMEI নাম্বার পাবেন।",
-            prices: [
-                { provider: "ANY SIM", price: "2100" }
-            ]
-        },
-
-
-        {
-            title: "🔷 BLOCK BIKASH ACCOUNT ",
-            description: " এটার মাধ্যম যে কারো বিকাশ নাম্বার লক করে দিতে পারবেন। অর্থাৎ যে বিকাশ লক করে দিবেন সেটা দিয়ে সে আর লেনদেন করতে পারবে না, বিকাশে টাকা থাকলে সেটাও তুলতে পারবে না।",
-            prices: [
-                { provider: "PERSONAL BKASH", price: "1100" }
-            ]
-        }
-    ];
+// Services Data
+const services = [
+ 
+ //start service card 
+ 
+   
+    {
+        "id": 1,
+        "title": "SIM INFORMATION",
+        "description": "যেকোনো সিম কার নামে রেজিষ্ট্রেশন করা তার সেই NID এবং সম্পূর্ণ পরিচয় বের করে নিতে পারবেন এই সার্ভিস এর মাধ্যমে।",
+        "options": [
+            { "name": "GP", "price": "140 টাকা" },
+            { "name": "BL", "price": "130 টাকা" },
+            { "name": "ROBI", "price": "170 টাকা" },
+            { "name": "AIRTEL", "price": "170 টাকা" },
+            { "name": "TALITOLK", "price": "270 টাকা" }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "LIVE LOCATION",
+        "description": "যেকোনো সিম এর লাইভ লোকেশন বের করতে পারবেন এই সার্ভিস এর মাধ্যমে। সিম খোলা থাকলে বর্তমান লাইভ লোকেশন পাবেন। সিম বন্ধ থাকলে সেই সিম বন্ধ হওয়ার আগে যেখানে ছিলো সেটার লোকেশন পাবেন।",
+        "options": [
+            { "name": "GP", "price": "530 টাকা" },
+            { "name": "BL", "price": "530 টাকা" },
+            { "name": "ROBI", "price": "540 টাকা" },
+            { "name": "AIRTEL", "price": "520 টাকা" },
+            { "name": "TALITOLK", "price": "500 টাকা" }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "SIM BLOCK",
+        "description": "যেকারো সিম ডিজাবেল করে দিতে পারবেন এই সার্ভিস এর মাধ্যমে। অর্থাৎ যে সিম ডিজাবেল করবে সেটা দিয়ে কেউ কল করতে পারবে না রিসিভও করতে পারবে না।",
+        "options": [
+            { "name": "GP", "price": "180 টাকা" },
+            { "name": "BL", "price": "160 টাকা" },
+            { "name": "ROBI", "price": "170 টাকা" },
+            { "name": "AIRTEL", "price": "170 টাকা" },
+            { "name": "TALITOLK", "price": "200 টাকা" }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "NID TO ALL NUMBER",
+        "description": "এইটার মাধ্যামে আপনি যেকোনো এনআইডি নাম্বার থেকে সেই এনআইডি দিয়ে মোট কয়টা সিম রেজিষ্ট্রেশন করা সেই সকল নাম্বার দেখতে পারবেন।",
+        "options": [
+            { "name": "ANY NID", "price": "650 টাকা" }
+        ]
+    },
+    {
+        "id": 5,
+        "title": "ACCOUNT INFORMATION",
+        "description": "এটার মধ্যে আপনি বিকাশ রকেট কার NID দিয়ে ভেরিফাই করা সেই NID এবং সেই লোকের সম্পূর্ণ তথ্য পাবেন।",
+        "options": [
+            { "name": "BKASH", "price": "1900 টাকা" },
+            { "name": "ROCKET", "price": "1700 টাকা" }
+        ]
+    },
+    {
+        "id": 6,
+        "title": "NID CARD",
+        "description": "এটার মাধ্যম যে কারো ফরম নাম্বার, NID নাম্বার আথবা ভোটার নাম্বার দিয়ে সেই NID কার্ডটা বের করে নিতে পারবেন। কোন ফেইজ ভেরিফাই করতে হবে না।",
+        "options": [
+            { "name": "FROM NUMBER", "price": "150 টাকা" },
+            { "name": "NID NUMBER", "price": "150 টাকা" },
+            { "name": "VOTER NUMBER", "price": "155 টাকা" }
+        ]
+    },
+    {
+        "id": 7,
+        "title": "SIM CALL LIST",
+        "description": "এইটার মাধ্যমে যে কোন নাম্বারের লাস্ট ৩ মাসের কল লিস্ট লোকেশন বাহির করা হয়। অর্থাৎ ৩ মাসে যত নাম্বারে কথা বলছে সে সকল নাম্বার & ঠিকানা এবং ঐ ফোনের IMEI নাম্বার পাবেন।",
+        "options": [
+            { "name": "ANY SIM", "price": "2100 টাকা" }
+        ]
+    },
+    {
+        "id": 8,
+        "title": "BLOCK BIKASH ACCOUNT",
+        "description": "এটার মাধ্যম যে কারো বিকাশ নাম্বার লক করে দিতে পারবেন। অর্থাৎ যে বিকাশ লক করে দিবেন সেটা দিয়ে সে আর লেনদেন করতে পারবে না, বিকাশে টাকা থাকলে সেটাও তুলতে পারবে না।",
+        "options": [
+            { "name": "PERSONAL BKASH", "price": "1100 টাকা" }
+        ]
+    },
     
-//   SERVICES END
+];
 
-    const servicesContainer = document.getElementById('services-container');
-    let activeCard = null;
 
+
+// end service card 
+
+
+
+
+
+
+
+// DOM Elements
+const servicesContainer = document.getElementById('servicesContainer');
+const serviceModal = document.getElementById('serviceModal');
+const closeServiceModal = document.getElementById('closeServiceModal');
+const serviceModalTitle = document.getElementById('serviceModalTitle');
+const serviceModalText = document.getElementById('serviceModalText');
+const whatsappServiceBtn = document.getElementById('whatsappServiceBtn');
+const telegramServiceBtn = document.getElementById('telegramServiceBtn');
+const emailServiceBtn = document.getElementById('emailServiceBtn');
+
+// Load Services
+function loadServices() {
+    servicesContainer.innerHTML = '';
+    
     services.forEach(service => {
         const serviceCard = document.createElement('div');
         serviceCard.className = 'service-card';
-        
-        // Create price list HTML
-        let priceListHTML = '<div class="price-info"><div class="price-list">';
-        service.prices.forEach(item => {
-            priceListHTML += `
-                <div class="price-item">
-                    <span>${item.provider}</span>
-                    <span>${item.price}৳</span>
-                </div>
-            `;
-        });
-        priceListHTML += '</div></div>';
-        
         serviceCard.innerHTML = `
             <h3>${service.title}</h3>
             <p>${service.description}</p>
-            ${priceListHTML}
+            <div class="service-options" id="options-${service.id}">
+                <ul>
+                    ${service.options.map(option => `
+                        <li onclick="showServiceModal('${service.title}', '${option.name} - ${option.price}')">
+                            <span>${option.name}</span>
+                            <span>${option.price}</span>
+                        </li>
+                    `).join('')}
+                </ul>
+            </div>
         `;
         
-        // Add click event to toggle price info
-        serviceCard.addEventListener('click', function() {
-            const priceInfo = this.querySelector('.price-info');
+        serviceCard.addEventListener('click', (e) => {
+            // Don't toggle if clicking on an option
+            if (e.target.tagName === 'LI' || e.target.tagName === 'SPAN') return;
             
-            // Close all other cards first
-            if (activeCard && activeCard !== this) {
-                activeCard.querySelector('.price-info').classList.remove('show');
-                activeCard.classList.remove('active');
-            }
+            const options = document.getElementById(`options-${service.id}`);
+            options.classList.toggle('active');
             
-            // Toggle current card
-            priceInfo.classList.toggle('show');
-            this.classList.toggle('active');
-            
-            // Update active card reference
-            activeCard = priceInfo.classList.contains('show') ? this : null;
+            // Close other open options
+            document.querySelectorAll('.service-options').forEach(opt => {
+                if (opt.id !== `options-${service.id}`) {
+                    opt.classList.remove('active');
+                }
+            });
         });
         
         servicesContainer.appendChild(serviceCard);
     });
+}
 
-    // Create floating particles for visual effect
-    createFloatingParticles();
+// Show Service Modal
+function showServiceModal(serviceName, optionText) {
+    serviceModalTitle.textContent = serviceName;
+    serviceModalText.textContent = `${optionText} - এই সার্ভিসটি নিতে সরাসরি আমাদের সাথে নিচের মাধ্যমগুলোতে যোগাযোগ করুন।`;
+    serviceModal.style.display = 'flex';
+    
+    // Close all service options
+    document.querySelectorAll('.service-options').forEach(opt => {
+        opt.classList.remove('active');
+    });
+}
+
+// Event Listeners
+closeServiceModal.addEventListener('click', () => {
+    serviceModal.style.display = 'none';
 });
 
-function createFloatingParticles() {
-    const colors = ['#6e00ff', '#ff00e4', '#00ffea'];
-    
-    for (let i = 0; i < 15; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'floating-particle';
-        
-        // Random properties
-        const size = Math.random() * 5 + 2;
-        const posX = Math.random() * 100;
-        const posY = Math.random() * 100;
-        const delay = Math.random() * 5;
-        const duration = Math.random() * 10 + 10;
-        const color = colors[Math.floor(Math.random() * colors.length)];
-        
-        // Apply styles
-        particle.style.cssText = `
-            position: fixed;
-            width: ${size}px;
-            height: ${size}px;
-            background: ${color};
-            border-radius: 50%;
-            top: ${posY}vh;
-            left: ${posX}vw;
-            opacity: ${Math.random() * 0.4 + 0.1};
-            z-index: 0;
-            pointer-events: none;
-            animation: float-particle ${duration}s ease-in-out ${delay}s infinite;
-            filter: blur(${size/2}px);
-        `;
-        
-        document.body.appendChild(particle);
+window.addEventListener('click', (e) => {
+    if (e.target === serviceModal) {
+        serviceModal.style.display = 'none';
     }
+});
+
+// Contact Button Actions (replace with your actual links)
+whatsappServiceBtn.addEventListener('click', () => {
+    window.open('https://wa.me/off your number ', '_blank');
+});
+
+telegramServiceBtn.addEventListener('click', () => {
+    window.open('https://t.me/Elite_Services_APP', '_blank');
+});
+
+emailServiceBtn.addEventListener('click', () => {
+    window.location.href = 'mailto:elite.software@eay.jp';
+});
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    loadServices();
     
-    // Add keyframes for particle animation
-    const style = document.createElement('style');
-    style.innerHTML = `
-        @keyframes float-particle {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) rotate(180deg); }
-            100% { transform: translate(0, 0) rotate(360deg); }
-        }
-    `;
-    document.head.appendChild(style);
-}
+    // Add animation to service cards on load
+    setTimeout(() => {
+        const cards = document.querySelectorAll('.service-card');
+        cards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 150 * index);
+        });
+    }, 300);
+});
